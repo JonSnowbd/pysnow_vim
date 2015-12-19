@@ -7,6 +7,10 @@ set t_Co=256
 set autoindent
 set smarttab
 
+if has('gui_running')
+	set guifont=Hack\ 11
+endif
+
 filetype plugin indent on
 
 call vundle#begin()
@@ -29,6 +33,8 @@ map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Bindings
 nmap <silent> <Leader><Up> :wincmd k<CR>
 nmap <silent> <Leader><Down> :wincmd j<CR>
 nmap <silent> <Leader><Left> :wincmd h<CR>
